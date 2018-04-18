@@ -1,4 +1,4 @@
-// headers do código da matriz
+// headers do cÃ³digo da matriz
 #include <iostream>
 using namespace std;
 #ifndef MATRIZ_h
@@ -18,6 +18,7 @@ class Matriz{
 		void ones();
 		int getRows();
 		int getCols();
+		int& Matriz::operator()(int linha, int coluna);
 		Matriz operator+(const Matriz& m);
 		Matriz operator-=(const Matriz& m);
 		Matriz operator+=(const Matriz& m);
