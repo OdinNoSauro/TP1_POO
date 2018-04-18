@@ -7,22 +7,18 @@ using namespace std;
 int main(int argc, char** argv) {
 	Matriz X(3,1), A(3,3), C(3,3);
 	A.unit(); // inicializa A como uma matriz identidade
-	//A(2,1)=10; // altera o valor de uma posição de A
+	//A(2,1)=10; // altera o valor de uma posiÃ§Ã£o de A
 	C.zeros(); // inicializa C com zeros
 	C=A+A; // Soma
-	C-=A; // Subtração
-	A=C-A; // Subtração
+	C-=A; // SubtraÃ§Ã£o
+	A=C-A; // SubtraÃ§Ã£o
 	A+=A; // Soma
-	A=~C; // A é igual a transposta de C
+	A=~C; // A Ã© igual a transposta de C
 	X.ones(); // inicializa X com 1s
-	cout << X << endl; // Impressão de matrizes
-	X*=2; // multiplicação por uma constante
-	cout << X << endl; // Impressão de matrizes
-	C=A*X; // multiplicação de matrizes
-	cout << C << endl; // Impressão de matrizes
-	C*=X; // multiplicação de matrizes
-	cout << C << endl; // Impressão de matrizes
+	X*=2; // multiplicaÃ§Ã£o por uma constante
+	C=A*X; // multiplicaÃ§Ã£o de matrizes
+	C*=X; // multiplicaÃ§Ã£o de matrizes
+	cout << C << endl; // ImpressÃ£o de matrizes
 	int numerolinhas = X.getRows();
 	int numerocolunas= X.getCols();
-	cout << numerolinhas << endl << numerocolunas << endl;
 }
