@@ -63,9 +63,13 @@ int Matriz::getCols(){
 	return num_colunas;
 }
 
+int& Matriz::operator()(int linha, int coluna){
+	return &this->M[linha][colunas];
+}
+
 Matriz Matriz::operator+(const Matriz& m){
 	if (this->num_linhas != m.num_linhas || this->num_colunas != m.num_colunas){
-		cout << "Tamanhos das matrizes incompatíveis"<<endl;
+		cout << "Tamanhos das matrizes incompatÃ­veis"<<endl;
 		return (*this);
 	}
 	Matriz new_mat(this->num_linhas,this->num_colunas);
@@ -79,7 +83,7 @@ Matriz Matriz::operator+(const Matriz& m){
 
 Matriz Matriz::operator-(const Matriz& m){
 	if (this->num_linhas != m.num_linhas || this->num_colunas != m.num_colunas){
-		cout << "Tamanhos das matrizes incompatíveis"<<endl;
+		cout << "Tamanhos das matrizes incompatÃ­veis"<<endl;
 		return (*this);
 	}
 	Matriz new_mat(this->num_linhas,this->num_colunas);
@@ -93,7 +97,7 @@ Matriz Matriz::operator-(const Matriz& m){
 
 Matriz Matriz::operator+=(const Matriz& m){
 	if (this->num_linhas != m.num_linhas || this->num_colunas != m.num_colunas){
-		cout << "Tamanhos das matrizes incompatíveis"<<endl;
+		cout << "Tamanhos das matrizes incompatÃ­veis"<<endl;
 		return (*this);
 	}
 	for (int i=0; i<this->num_linhas; i++){
@@ -106,7 +110,7 @@ Matriz Matriz::operator+=(const Matriz& m){
 
 Matriz Matriz::operator-=(const Matriz& m){
 	if (this->num_linhas != m.num_linhas || this->num_colunas != m.num_colunas){
-		cout << "Tamanhos das matrizes incompatíveis"<<endl;
+		cout << "Tamanhos das matrizes incompatÃ­veis"<<endl;
 		return (*this);
 	}
 	for (int i=0; i<this->num_linhas; i++){
@@ -129,7 +133,7 @@ Matriz Matriz::operator~(){
 
 Matriz Matriz::operator=(const Matriz& m){
 	if (this->num_linhas != m.num_linhas || this->num_colunas != m.num_colunas){
-		cout << "Tamanhos das matrizes incompatíveis"<<endl;
+		cout << "Tamanhos das matrizes incompatÃ­veis"<<endl;
 		return (*this);
 	}
 	
@@ -142,52 +146,10 @@ Matriz Matriz::operator=(const Matriz& m){
 }
 
 
-Matriz Matriz::operator*=(const Matriz& m){
-	if (this->num_colunas != m.num_linhas){
-		cout << "Tamanhos das matrizes incompatíveis"<<endl;
-		return (*this);
-	}
-	for (int i=0; i<this->num_linhas; i++){
-		for (int j=0; j<this->num_colunas; j++){
-			this->M[j][i] = m.M[i][j];
-		}
-	}
-	return *this;
-}  
 
-Matriz Matriz::operator*=(const int& constante){
-	for (int i=0; i<this->num_linhas; i++){
-		for (int j=0; j<this->num_colunas; j++){
-			this->M[j][i] *= constante;
-		}
-	}
-	return *this;
-} 
 
-Matriz Matriz::operator*(const Matriz& m){
-	if (this->num_colunas != m.num_linhas){
-		cout << "Tamanhos das matrizes incompatíveis"<<endl;
-		return (*this);
-	}
-	Matriz new_mat(this->num_linhas,this->num_colunas);
-	for (int i=0; i<this->num_linhas; i++){
-		for (int j=0; j<this->num_colunas; j++){
-			new_mat.M[i][j] = this->M[i][j] - m.M[i][j];
-		}
-	}
-	return new_mat;
-}
 
-ostream& operator<<(ostream& out, const Matriz& m){
-	int i,j;
-	for (i = 0; i<m.num_linhas; i++){
-		for(j = 0; j<m.num_linhas; j++){
-			out<<m.M[i][j]<<"\t";
-		}
-		out<<endl;
-	}
-	return out;
-}
+
 
 
 
