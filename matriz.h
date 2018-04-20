@@ -11,14 +11,14 @@ class Matriz{
 		int **M;
 	public:
 		Matriz(int linhas, int colunas);
-		Matriz();	
+		Matriz();
 		~Matriz();
 		void zeros();
 		void unit();
 		void ones();
 		int getRows();
 		int getCols();
-		int& Matriz::operator()(int linha, int coluna);
+		int& operator()(int linha, int coluna);
 		Matriz operator+(const Matriz& m);
 		Matriz operator-=(const Matriz& m);
 		Matriz operator+=(const Matriz& m);
@@ -26,7 +26,7 @@ class Matriz{
 		Matriz operator=(const Matriz& m);
 		Matriz operator-(const Matriz& m);
 		Matriz operator*=(const Matriz& m);
-		Matriz operator*=(const int& constante);
+		Matriz operator*=(double);
 		Matriz operator*(const Matriz& m);
 		friend ostream& operator<<(ostream& out, const Matriz& m);
 
