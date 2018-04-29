@@ -8,17 +8,18 @@ class Matriz{
 	private:
 		int num_linhas;
 		int num_colunas;
-		int **M;
+		double **array;
 	public:
 		Matriz(int linhas, int colunas);
 		Matriz();
 		~Matriz();
+		aloca_array();
 		void zeros();
 		void unit();
 		void ones();
 		int getRows();
 		int getCols();
-		int& operator()(int linha, int coluna);
+		double& operator()(int linha, int coluna);
 		Matriz operator+(const Matriz& m);
 		Matriz operator-=(const Matriz& m);
 		Matriz operator+=(const Matriz& m);

@@ -9,7 +9,7 @@ int main(int argc, char** argv) {
 	A.unit(); // inicializa A como uma matriz identidade
 	A(2,1)=10; // altera o valor de uma posição de A
 	cout << A << endl;
-	C.zeros(); // inicializa C com zeros
+	C.ones(); // inicializa C com zeros
 	cout << "zeros" <<endl;
 	cout << C << endl;
 	C=A+A; // Soma
@@ -18,7 +18,7 @@ int main(int argc, char** argv) {
 	C-=A; // Subtração
 	cout << "sub" <<endl;
 	cout << C << endl;
-	A=C-A; // Subtração
+	A=C-A; // Subtração	
 	cout << "sub" <<endl;
 	cout << A << endl;
 	A+=A; // Soma
@@ -33,14 +33,14 @@ int main(int argc, char** argv) {
 	X*=2; // multiplicação por uma constante
 	cout << "mult constante" <<endl;
 	cout << X << endl;
-	C=A*X; // multiplicação de matrizes
+	C*=X; // multiplicação de matrizes
 	cout << "mult" <<endl;
 	cout << C << endl; // Impressão de matrizes
-	cout << A << endl;
-	cout << X << endl;
-	C*=X; // multiplicação de matrizes
+	C=A*X; // multiplicação de matrizes
 	cout << "mult" <<endl;
 	cout << C << endl; // Impressão de matrizes
 	int numerolinhas = X.getRows();
 	int numerocolunas = X.getCols();
+	A.~Matriz();
+	cout<<A<<endl;
 }
