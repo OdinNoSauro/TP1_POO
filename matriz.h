@@ -9,11 +9,12 @@ class Matriz{
 		int num_linhas;
 		int num_colunas;
 		double **array;
+		aloca_matriz();
 	public:
 		Matriz(int linhas, int colunas);
 		Matriz();
+		Matriz(const Matriz& origem);
 		~Matriz();
-		aloca_array();
 		void zeros();
 		void unit();
 		void ones();
@@ -27,7 +28,7 @@ class Matriz{
 		Matriz operator=(const Matriz& m);
 		Matriz operator-(const Matriz& m);
 		Matriz operator*=(const Matriz& m);
-		Matriz operator*=(double);
+		Matriz operator*=(double constante);
 		Matriz operator*(const Matriz& m);
 		friend ostream& operator<<(ostream& out, const Matriz& m);
 
